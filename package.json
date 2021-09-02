@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
+    "@material-ui/styles": "^4.11.4",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -19,6 +20,7 @@
     "react-router-dom": "^5.2.1",
     "react-router-hash-link": "^2.4.3",
     "react-scripts": "4.0.3",
+    "reactstrap": "^8.10.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
     "web-vitals": "^1.0.1"

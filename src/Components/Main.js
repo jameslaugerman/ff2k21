@@ -4,7 +4,7 @@ import { WRData } from "../Data/FinalV1/WRData";
 import { QBData } from "../Data/FinalV1/QBData";
 import { TEData } from "../Data/FinalV1/TEData";
 import { Header } from "./Header";
-import { Switch, Route, Redirect, withRouter } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { PlayerTable } from "./playerTable"
 
 const RB = RBData;

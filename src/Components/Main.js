@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { RBData } from "../Data/FinalV1/RBData";
-import { WRData } from "../Data/FinalV1/WRData";
-import { QBData } from "../Data/FinalV1/QBData";
-import { TEData } from "../Data/FinalV1/TEData";
+import { WRData } from "../Data/FinalV2/WR";
+import { RBData } from "../Data/FinalV2/RB";
+import { QBData } from "../Data/FinalV2/QB";
+import { TEData } from "../Data/FinalV2/TE";
 import { Header } from "./Header";
 import { Switch, Route } from "react-router-dom";
 import { PlayerTable } from "./playerTable"

@@ -7,12 +7,12 @@ import { Header } from "./Header";
 import { Switch, Route } from "react-router-dom";
 import { PlayerTable } from "./playerTable"
 
-const RB = RBData;
-const WR = WRData;
-const QB = QBData;
-const TE = TEData;
+const [RB, setRB] = useState(RBData);
+const [WR, setWR] = useState(WRData);
+const [QB, setQB] = useState(QBData);
+const [TE, setTE] = useState(TEDataWR);
 
-const mapValues = (position) => position.map(Object.values);
+const mapValues = (position => position.map(Object.values));
 
 mapValues(QB);
 mapValues(TE);
@@ -69,4 +69,3 @@ export class Main extends Component {
 	}
 }
 
-// export default Main

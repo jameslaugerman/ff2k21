@@ -57,95 +57,29 @@ export const Main = () => {
 		{ name: "Rookie\r", label: "Rookie" },
 	];
 
-	const options = {
-		selectableRows: true,
-		selectableRowsOnClick: true,
-		onRowsDelete: (e) => {
-			// console.log(e.data[0].index);
-			console.log(e.data);
-		},
-		selectedRows: {
-			delete: "Delete",
-			deleteAria: "Delete Selected Rows",
-		},
-	};
-
-	const WRoptions = {
-		selectableRows: "multiple",
-		selectableRowsOnClick: true,
-		onRowsDelete: (e) => {
-			const dataIndex = e.data[0].dataIndex;
-			const playerToDelete = WR[dataIndex];
-			const playerRank = playerToDelete.Overall_Rank;
-	
-			const filteredWR = WR.filter((a) => a.Overall_Rank !== playerRank);
-	
-			setWR(filteredWR);
-		},
-		selectedRows: {
-			delete: "Delete",
-			deleteAria: "Delete Selected Rows",
-		},
-	};
-
-	const RBoptions = {
-		selectableRows: "multiple",
-		selectableRowsOnClick: true,
-		onRowsDelete: (e) => {
-			const dataIndex = e.data[0].dataIndex;
-			const playerToDelete = RB[dataIndex];
-			const playerRank = playerToDelete.Overall_Rank;
-	
-			const filteredWR = RB.filter((a) => a.Overall_Rank !== playerRank);
-	
-			setRB(filteredWR);
-		},
-		selectedRows: {
-			delete: "Delete",
-			deleteAria: "Delete Selected Rows",
-		},
-	};
-
-	const TEoptions = {
-		selectableRows: "multiple",
-		selectableRowsOnClick: true,
-		onRowsDelete: (e) => {
-			const dataIndex = e.data[0].dataIndex;
-			const playerToDelete = TE[dataIndex];
-			const playerRank = playerToDelete.Overall_Rank;
-	
-			const filteredWR = TE.filter((a) => a.Overall_Rank !== playerRank);
-	
-			setTE(filteredWR);
-		},
-		selectedRows: {
-			delete: "Delete",
-			deleteAria: "Delete Selected Rows",
-		},
-	};
-
-	const QBoptions = {
-		selectableRows: "multiple",
-		selectableRowsOnClick: true,
-		onRowsDelete: (e) => {
-			const dataIndex = e.data[0].dataIndex;
-			const playerToDelete = QB[dataIndex];
-			const playerRank = playerToDelete.Overall_Rank;
-	
-			const filteredWR = QB.filter((a) => a.Overall_Rank !== playerRank);
-	
-			setQB(filteredWR);
-		},
-		selectedRows: {
-			delete: "Delete",
-			deleteAria: "Delete Selected Rows",
-		},
+	const getOptions = (position, setFunc) => {
+		const options = {
+			selectableRows: "multiple",
+			selectableRowsOnClick: true,
+			onRowsDelete: (e) => {
+				const dataIndex = e.data.flatMap((a) => a.dataIndex);
+				var filteredPlayers = position.filter(
+					(el, i) => !dataIndex.some((j) => i === j)
+				);
+				setFunc(filteredPlayers);
+			},
+			selectedRows: {
+				delete: "Delete",
+				deleteAria: "Delete Selected Rows",
+			},
+		};
+		return options;
 	};
 
 	const WRComponent = () => {
 		return (
 			<PlayerTable
-				options={WRoptions}
+				options={getOptions(WR, setWR)}
 				columns={columns}
 				data={WR}
 				title={"Wide Receivers"}
@@ -156,7 +90,7 @@ export const Main = () => {
 	const RBComponent = () => {
 		return (
 			<PlayerTable
-				options={RBoptions}
+				options={getOptions(RB, setRB)}
 				columns={columns}
 				data={RB}
 				title={"Running Backs"}
@@ -167,7 +101,7 @@ export const Main = () => {
 	const QBComponent = () => {
 		return (
 			<PlayerTable
-				options={QBoptions}
+				options={getOptions(QB, setQB)}
 				columns={columns}
 				data={QB}
 				title={"Quarter Backs"}
@@ -178,7 +112,7 @@ export const Main = () => {
 	const TEComponent = () => {
 		return (
 			<PlayerTable
-				options={TEoptions}
+				options={getOptions(TE,setTE)}
 				columns={columns}
 				data={TE}
 				title={"Tight Ends"}

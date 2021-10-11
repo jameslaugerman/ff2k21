@@ -6,22 +6,7 @@ import { TEData } from "../Data/FinalV2/TE";
 import { Header } from "./Header";
 import { Switch, Route } from "react-router-dom";
 import { useState } from "react";
-import MUIDataTable from "mui-datatables";
-
-const PlayerTable = (props) => {
-	return (
-		<div>
-			<div className="container-fluid">
-				<MUIDataTable
-					title={props.title}
-					data={props.data}
-					columns={props.columns}
-					options={props.options}
-				/>
-			</div>
-		</div>
-	);
-};
+import { PlayerTable } from "./playerTable";
 
 export const Main = () => {
 	const [RB, setRB] = useState(RBData);

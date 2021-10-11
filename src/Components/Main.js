@@ -23,8 +23,6 @@ const PlayerTable = (props) => {
 	);
 };
 
-
-
 export const Main = () => {
 	const [RB, setRB] = useState(RBData);
 	const [WR, setWR] = useState(WRData);
@@ -149,7 +147,6 @@ export const Main = () => {
 			<PlayerTable
 				options={WRoptions}
 				columns={columns}
-				onDelete={setWR}
 				data={WR}
 				title={"Wide Receivers"}
 			/>
@@ -161,7 +158,6 @@ export const Main = () => {
 			<PlayerTable
 				options={RBoptions}
 				columns={columns}
-				onDelete={setRB}
 				data={RB}
 				title={"Running Backs"}
 			/>
@@ -173,7 +169,6 @@ export const Main = () => {
 			<PlayerTable
 				options={QBoptions}
 				columns={columns}
-				onDelete={setQB}
 				data={QB}
 				title={"Quarter Backs"}
 			/>
@@ -185,7 +180,6 @@ export const Main = () => {
 			<PlayerTable
 				options={TEoptions}
 				columns={columns}
-				onDelete={setTE}
 				data={TE}
 				title={"Tight Ends"}
 			/>

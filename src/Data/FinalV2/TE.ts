@@ -1,4 +1,6 @@
-export const TEData = [
+import { Player } from "../types";
+
+export const TEData: Player[] = [
 	{
 		Position_Rank: 1,
 		rankIGNORE: -6,
@@ -249,5 +251,6 @@ export const TEData = [
 		POR: 0,
 		JamesVal: "$0",
 		"300_Value": "$0,",
+		"Rookie\r": "\r",
 	},
 ];

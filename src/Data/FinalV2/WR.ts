@@ -1,4 +1,6 @@
-export const WRData = [
+import { Player } from "../types";
+
+export const WRData: Player[] = [
 	{
 		Position_Rank: 1,
 		rankIGNORE: -7,
@@ -248,7 +250,7 @@ export const WRData = [
 		Week1Projection: 12.2,
 		POR: 3.1,
 		JamesVal: "$22",
-		"300_Value": 0,
+		"300_Value": "0",
 		"Rookie\r": "\r",
 	},
 	{
@@ -318,7 +320,7 @@ export const WRData = [
 		Week1Projection: 0,
 		POR: -9.1,
 		JamesVal: "-$64",
-		"300_Value": 0,
+		"300_Value": "0",
 		"Rookie\r": "\r",
 	},
 	{
@@ -360,7 +362,7 @@ export const WRData = [
 		Week1Projection: 12,
 		POR: 2.9,
 		JamesVal: "$20",
-		"300_Value": 0,
+		"300_Value": "0",
 		"Rookie\r": "\r",
 	},
 	{
@@ -739,5 +741,6 @@ export const WRData = [
 		POR: 1.1,
 		JamesVal: "$8",
 		"300_Value": "$2,",
+		"Rookie\r": "\r",
 	},
 ];

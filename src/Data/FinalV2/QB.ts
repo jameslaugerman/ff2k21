@@ -1,4 +1,6 @@
-export const QBData = [
+import { Player } from "../types";
+
+export const QBData: Player[] = [
 	{
 		Position_Rank: 4,
 		rankIGNORE: -67,
@@ -263,5 +265,6 @@ export const QBData = [
 		POR: 0,
 		JamesVal: "$0",
 		"300_Value": "$0,",
+		"Rookie\r": "\r",
 	},
 ];

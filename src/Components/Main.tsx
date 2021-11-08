@@ -1,4 +1,3 @@
-import React from "react";
 import { WRData } from "../Data/FinalV2/WR";
 import { RBData } from "../Data/FinalV2/RB";
 import { QBData } from "../Data/FinalV2/QB";
@@ -7,29 +6,26 @@ import { Header } from "./Header";
 import { Switch, Route } from "react-router-dom";
 import { useState } from "react";
 import { PlayerTable } from "./playerTable";
+import { Player } from "../Data/types";
+import {  MUIDataTableOptions } from "mui-datatables";
 
-export const Main = () => {
-	const [RB, setRB] = useState(RBData);
-	const [WR, setWR] = useState(WRData);
-	const [QB, setQB] = useState(QBData);
-	const [TE, setTE] = useState(TEData);
+interface RowsDeleted {
+	lookup: { [dataIndex: number]: boolean };
+	data: Array<{ index: number; dataIndex: number }>;
+}
 
-	const mapValues = (position) => position.map(Object.values);
+export interface FF2021Column {
+	name: string;
+	label?: string;
+}
 
-	mapValues(QB);
-	mapValues(TE);
-	mapValues(WR);
-	mapValues(RB);
+export const Main = (): JSX.Element => {
+	const [RB, setRB] = useState<Player[]>(RBData);
+	const [WR, setWR] = useState<Player[]>(WRData);
+	const [QB, setQB] = useState<Player[]>(QBData);
+	const [TE, setTE] = useState<Player[]>(TEData);
 
-	// const slicer = (position) =>
-	// 	position.forEach((a) => (a.Last_Name = a.Last_Name.slice(0, -1)));
-
-	// slicer(RB);
-	// slicer(QB);
-	// slicer(WR);
-	// slicer(TE);
-
-	const columns = [
+	const columns: FF2021Column[] = [
 		{ name: "Overall_Rank", label: "Overall Rank" },
 		{ name: "Position_Rank", label: "Position Rank" },
 		{ name: "First_Name", label: "First Name" },
@@ -42,23 +38,24 @@ export const Main = () => {
 		{ name: "Rookie\r", label: "Rookie" },
 	];
 
-	const getOptions = (position, setFunc) => {
-		const options = {
+	function getOptions (
+		players: Player[], 
+		setFunc: (player: Player[]) => void
+	): MUIDataTableOptions {
+
+		function handleOnRowsDelete (rowsDeleted: RowsDeleted): void {
+			const dataIndex = rowsDeleted.data.flatMap((a) => a.dataIndex);
+			var filteredPlayers = players.filter(
+				(el, i) => !dataIndex.some((j) => i === j)
+			);
+			setFunc(filteredPlayers);
+		}
+
+		return {
 			selectableRows: "multiple",
 			selectableRowsOnClick: true,
-			onRowsDelete: (e) => {
-				const dataIndex = e.data.flatMap((a) => a.dataIndex);
-				var filteredPlayers = position.filter(
-					(el, i) => !dataIndex.some((j) => i === j)
-				);
-				setFunc(filteredPlayers);
-			},
-			selectedRows: {
-				delete: "Delete",
-				deleteAria: "Delete Selected Rows",
-			},
+			onRowsDelete: handleOnRowsDelete,
 		};
-		return options;
 	};
 
 	const WRComponent = () => {

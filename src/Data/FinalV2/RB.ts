@@ -1,4 +1,6 @@
-export const RBData = [
+import { Player } from "../types";
+
+export const RBData: Player[] = [
 	{
 		Position_Rank: 1,
 		rankIGNORE: -1,

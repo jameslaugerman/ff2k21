@@ -1,4 +1,6 @@
-export const WRData = [
+import { Player } from "../types";
+
+export const WRData: Player[] = [
 	{
 		Position_Rank: 1,
 		rankIGNORE: -7,
@@ -25,20 +27,6 @@ export const WRData = [
 		POR: 8.7,
 		JamesVal: "$61",
 		"300_Value": "$57",
-		"Rookie\r": "\r",
-	},
-	{
-		Position_Rank: 5,
-		rankIGNORE: -18,
-		First_Name: "Calvin",
-		Last_Name: "Ridley,",
-		Team: "ATL",
-		ESPN_Value: "$37",
-		Overall_Rank: 18,
-		Week1Projection: 16,
-		POR: 6.9,
-		JamesVal: "$48",
-		"300_Value": "$56",
 		"Rookie\r": "\r",
 	},
 	{
@@ -262,7 +250,7 @@ export const WRData = [
 		Week1Projection: 12.2,
 		POR: 3.1,
 		JamesVal: "$22",
-		"300_Value": 0,
+		"300_Value": "0",
 		"Rookie\r": "\r",
 	},
 	{
@@ -308,20 +296,6 @@ export const WRData = [
 		"Rookie\r": "\r",
 	},
 	{
-		Position_Rank: 30,
-		rankIGNORE: -64,
-		First_Name: "Jerry",
-		Last_Name: "Jeudy,",
-		Team: "DEN",
-		ESPN_Value: "$7",
-		Overall_Rank: 64,
-		Week1Projection: 12.4,
-		POR: 3.3,
-		JamesVal: "$23",
-		"300_Value": "$11",
-		"Rookie\r": "\r",
-	},
-	{
 		Position_Rank: 32,
 		rankIGNORE: -66,
 		First_Name: "Ja'Marr",
@@ -346,7 +320,7 @@ export const WRData = [
 		Week1Projection: 0,
 		POR: -9.1,
 		JamesVal: "-$64",
-		"300_Value": 0,
+		"300_Value": "0",
 		"Rookie\r": "\r",
 	},
 	{
@@ -388,7 +362,7 @@ export const WRData = [
 		Week1Projection: 12,
 		POR: 2.9,
 		JamesVal: "$20",
-		"300_Value": 0,
+		"300_Value": "0",
 		"Rookie\r": "\r",
 	},
 	{
@@ -767,5 +741,6 @@ export const WRData = [
 		POR: 1.1,
 		JamesVal: "$8",
 		"300_Value": "$2,",
+		"Rookie\r": "\r",
 	},
 ];

@@ -12021,6 +12021,11 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typescript-checker@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/typescript-checker/-/typescript-checker-2.0.0.tgz#e9d43bacca3d9b19220937110e71c5b6b14ecef9"
+  integrity sha512-oxIcXFQT9bdgkQGN5Jt4vscmD6KQ0iuZ8gR1elgM9UA+sLvdxTvoEZlgESImeTGKCi1gCG0GoYtLsVNKL8V5zQ==
+
 typescript@^4.4.4:
   version "4.4.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.4.tgz#2cd01a1a1f160704d3101fd5a58ff0f9fcb8030c"

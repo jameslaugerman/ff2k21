@@ -26,7 +26,7 @@ export const Main = (): JSX.Element => {
 	const [TE, setTE] = useState<Player[]>(TEData);
 
 	const columns: FF2021Column[] = [
-		{ name: "Overall_Rank", label: "Overall Rank" },
+		{ name: "Overall_Rank", label: "strings" },
 		{ name: "Position_Rank", label: "Position Rank" },
 		{ name: "First_Name", label: "First Name" },
 		{ name: "Last_Name", label: "Last Name" },

@@ -1,4 +1,4 @@
-export const QBData = [
+const QBData = [
 	{
 		Position_Rank: 1,
 		rankIGNORE: -49,
@@ -291,5 +291,103 @@ export const QBData = [
 		POR: -1.9,
 		JamesVal: "-$13",
 		"300_Value": "$0,",
+		"Rookie\r": "\r",
 	},
 ];
+
+class Xplayer {
+	constructor(
+		Position_Rank,
+		rankIgnore,
+		FirstName,
+		LastName,
+		Team,
+		ESPN,
+		OverallRank,
+		Week1Projection,
+		POR,
+		JamesVal,
+		threeHundredValue,
+		Rookie
+	) {
+		this.Position_Rank = Position_Rank;
+		this.rankIGNORE = rankIgnore;
+		this.First_Name = FirstName;
+		this.Last_Name = LastName;
+		this.Team = Team;
+		this.ESPN_Value = +ESPN.substring(1);
+		this.Overall_Rank = OverallRank;
+		this.Week1Projection = Week1Projection;
+		this.POR = POR;
+		this.JamesVal = +JamesVal.substring(1);
+		this.threeHundredValue = +threeHundredValue.substring(1);
+		this.Rookie = Rookie === "\r" ? false : true;
+	}
+}
+
+let QBPlayerData = [];
+
+QBData.forEach(
+	({
+		Position_Rank,
+		rankIGNORE,
+		First_Name,
+		Last_Name,
+		Team,
+		ESPN_Value,
+		Overall_Rank,
+		Week1Projection,
+		POR,
+		JamesVal,
+		"300_Value": threeHundredValue,
+		"Rookie\r": Rookie,
+	}) => {
+		let playerx = new Xplayer(
+			Position_Rank,
+			rankIGNORE,
+			First_Name,
+			Last_Name,
+			Team,
+			ESPN_Value,
+			Overall_Rank,
+			Week1Projection,
+			POR,
+			JamesVal,
+			threeHundredValue,
+			Rookie
+		);
+		QBPlayerData.push(playerx);
+	}
+);
+
+// let {
+// 	Position_Rank,
+// 	rankIGNORE,
+// 	First_Name,
+// 	Last_Name,
+// 	Team,
+// 	ESPN_Value,
+// 	Overall_Rank,
+// 	Week1Projection,
+// 	POR,
+// 	JamesVal,
+// 	"300_Value": threeHundredValue,
+// 	"Rookie\r": Rookie,
+// } = QBData[14];
+
+// let player1 = new Xplayer(
+// 	Position_Rank,
+// 	rankIGNORE,
+// 	First_Name,
+// 	Last_Name,
+// 	Team,
+// 	ESPN_Value,
+// 	Overall_Rank,
+// 	Week1Projection,
+// 	POR,
+// 	JamesVal,
+// 	threeHundredValue,
+// 	Rookie
+// );
+
+console.log(QBPlayerData);

@@ -327,22 +327,9 @@ class Xplayer {
 
 let QBPlayerData = [];
 
-QBData.forEach(
-	({
-		Position_Rank,
-		rankIGNORE,
-		First_Name,
-		Last_Name,
-		Team,
-		ESPN_Value,
-		Overall_Rank,
-		Week1Projection,
-		POR,
-		JamesVal,
-		"300_Value": threeHundredValue,
-		"Rookie\r": Rookie,
-	}) => {
-		let playerx = new Xplayer(
+function dataConstructor(QBData) {
+	QBData.forEach(
+		({
 			Position_Rank,
 			rankIGNORE,
 			First_Name,
@@ -353,12 +340,29 @@ QBData.forEach(
 			Week1Projection,
 			POR,
 			JamesVal,
-			threeHundredValue,
-			Rookie
-		);
-		QBPlayerData.push(playerx);
-	}
-);
+			"300_Value": threeHundredValue,
+			"Rookie\r": Rookie,
+		}) => {
+			let playerx = new Xplayer(
+				Position_Rank,
+				rankIGNORE,
+				First_Name,
+				Last_Name,
+				Team,
+				ESPN_Value,
+				Overall_Rank,
+				Week1Projection,
+				POR,
+				JamesVal,
+				threeHundredValue,
+				Rookie
+			);
+			QBPlayerData.push(playerx);
+		}
+	);
+}
+
+dataConstructor(QBData);
 
 // let {
 // 	Position_Rank,

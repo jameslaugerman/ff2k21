@@ -1,13 +1,15 @@
-import { WRData } from "../Data/FinalV2/WR";
-import { RBData } from "../Data/FinalV2/RB";
-import { QBData } from "../Data/FinalV2/QB";
-import { TEData } from "../Data/FinalV2/TE";
+import {
+	QBDraft,
+	RBDraft,
+	WRDraft,
+	TEDraft,
+} from "../DataService/data-service";
 import { Header } from "./Header";
 import { Switch, Route } from "react-router-dom";
 import { useState } from "react";
 import { PlayerTable } from "./playerTable";
-import { Player } from "../Data/types";
-import {  MUIDataTableOptions } from "mui-datatables";
+import { IdealPlayerType } from "../Data/types";
+import { MUIDataTableOptions } from "mui-datatables";
 
 interface RowsDeleted {
 	lookup: { [dataIndex: number]: boolean };
@@ -20,30 +22,29 @@ export interface FF2021Column {
 }
 
 export const Main = (): JSX.Element => {
-	const [RB, setRB] = useState<Player[]>(RBData);
-	const [WR, setWR] = useState<Player[]>(WRData);
-	const [QB, setQB] = useState<Player[]>(QBData);
-	const [TE, setTE] = useState<Player[]>(TEData);
+	const [RB, setRB] = useState<IdealPlayerType[]>(RBDraft);
+	const [WR, setWR] = useState<IdealPlayerType[]>(WRDraft);
+	const [QB, setQB] = useState<IdealPlayerType[]>(QBDraft);
+	const [TE, setTE] = useState<IdealPlayerType[]>(TEDraft);
 
 	const columns: FF2021Column[] = [
-		{ name: "Overall_Rank", label: "strings" },
+		{ name: "Overall_Rank", label: "Overall Rank" },
 		{ name: "Position_Rank", label: "Position Rank" },
 		{ name: "First_Name", label: "First Name" },
 		{ name: "Last_Name", label: "Last Name" },
 		{ name: "Team" },
-		{ name: "Week1Projection", label: "Projected" },
+		{ name: "Week1Projection", label: "Week 1 Projection" },
 		{ name: "POR", label: "P.A.R." },
 		{ name: "JamesVal", label: "My Value" },
-		{ name: "300_Value", label: "ESPN Value" },
-		{ name: "Rookie\r", label: "Rookie" },
+		{ name: "threeHundredValue", label: "ESPN 300 Value" },
+		{ name: "Rookie", label: "Rookie" },
 	];
 
-	function getOptions (
-		players: Player[], 
-		setFunc: (player: Player[]) => void
+	function getOptions(
+		players: IdealPlayerType[],
+		setFunc: (player: IdealPlayerType[]) => void
 	): MUIDataTableOptions {
-
-		function handleOnRowsDelete (rowsDeleted: RowsDeleted): void {
+		function handleOnRowsDelete(rowsDeleted: RowsDeleted): void {
 			const dataIndex = rowsDeleted.data.flatMap((a) => a.dataIndex);
 			var filteredPlayers = players.filter(
 				(el, i) => !dataIndex.some((j) => i === j)
@@ -56,7 +57,7 @@ export const Main = (): JSX.Element => {
 			selectableRowsOnClick: true,
 			onRowsDelete: handleOnRowsDelete,
 		};
-	};
+	}
 
 	const WRComponent = () => {
 		return (
@@ -94,7 +95,7 @@ export const Main = (): JSX.Element => {
 	const TEComponent = () => {
 		return (
 			<PlayerTable
-				options={getOptions(TE,setTE)}
+				options={getOptions(TE, setTE)}
 				columns={columns}
 				data={TE}
 				title={"Tight Ends"}

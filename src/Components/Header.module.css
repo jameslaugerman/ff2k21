@@ -1,0 +1,20 @@
+.header {
+	background-image: linear-gradient(315deg, #4eb35a 0%, #2d4636 74%);
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	margin-top: 0;
+}
+
+.header > h1 {
+	font-size: 3rem;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: goldenrod;
+}
+
+.headerLink {
+	font-size: 1.4rem;
+	color: goldenrod !important;
+}
+
+.headerLink:hover {
+	color: greenyellow !important;
+}

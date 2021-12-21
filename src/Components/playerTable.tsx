@@ -1,6 +1,8 @@
 import MUIDataTable, { MUIDataTableOptions } from "mui-datatables";
+import PatchStyles from "patch-styles";
 import { IdealPlayerType } from "../Data/types";
 import { FF2021Column } from "./Main";
+import styles from "./playerTable.module.css";
 
 interface Props {
 	title: string;
@@ -11,8 +13,8 @@ interface Props {
 
 export const PlayerTable = (props: Props) => {
 	return (
-		<div>
-			<div className="container-fluid">
+		<PatchStyles classNames={styles}>
+			<div className="container-fluid tableText">
 				<MUIDataTable
 					title={props.title}
 					data={props.data}
@@ -20,6 +22,6 @@ export const PlayerTable = (props: Props) => {
 					options={props.options}
 				/>
 			</div>
-		</div>
+		</PatchStyles>
 	);
 };

@@ -250,7 +250,7 @@ export const TEData: Player[] = [
 		Week1Projection: 7.3,
 		POR: 0,
 		JamesVal: "$0",
-		"300_Value": "$0,",
+		"300_Value": "$0",
 		"Rookie\r": "\r",
 	},
 ];

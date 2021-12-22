@@ -35,14 +35,14 @@ class PlayerClass {
 		this.Position_Rank = Position_Rank;
 		this.rankIGNORE = rankIgnore;
 		this.First_Name = FirstName;
-		this.Last_Name = LastName;
+		this.Last_Name = LastName.replace(",","");
 		this.Team = Team;
-		this.ESPN_Value = +ESPN.substring(1);
+		this.ESPN_Value = +(ESPN.replace("$",""));
 		this.Overall_Rank = OverallRank;
 		this.Week1Projection = Week1Projection;
 		this.POR = POR;
-		this.JamesVal = +JamesVal.substring(1);
-		this.threeHundredValue = +threeHundredValue.substring(1);
+		this.JamesVal = +(JamesVal.replace("$",""));
+		this.threeHundredValue = +(threeHundredValue.replace("$",""));
 		this.Rookie = Rookie === "\r" ? false : true;
 	}
 }
@@ -82,10 +82,10 @@ function dataConstructor(playerData:Player[], playerArr:IdealPlayerType[]) {
 	);
 }
 
-export let Quarterbacks:IdealPlayerType[] = [];
-export let RunningBacks:IdealPlayerType[] = [];
-export let WideReceivers:IdealPlayerType[]= [];
-export let TightEnds:IdealPlayerType[] = [];
+let Quarterbacks:IdealPlayerType[] = [];
+let RunningBacks:IdealPlayerType[] = [];
+let WideReceivers:IdealPlayerType[]= [];
+let TightEnds:IdealPlayerType[] = [];
 
 dataConstructor(QBData, Quarterbacks);
 dataConstructor(RBData, RunningBacks);

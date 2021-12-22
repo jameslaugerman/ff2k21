@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
+
+.header {
+	font-family: "Black Ops One", "Arial Narrow", Arial, sans-serif;
+	margin-top: 0;
+}
+
+.header > h1 {
+	font-size: 3rem;
+	font-family: "Black Ops One", "Times New Roman", Times, serif;
+	color: goldenrod;
+}
+
+.headerLink {
+	font-size: 1.4rem;
+	color: goldenrod !important;
+}
+
+.headerLink:hover {
+	color: greenyellow !important;
+}

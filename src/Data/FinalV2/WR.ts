@@ -740,7 +740,7 @@ export const WRData: Player[] = [
 		Week1Projection: 10.2,
 		POR: 1.1,
 		JamesVal: "$8",
-		"300_Value": "$2,",
+		"300_Value": "$2",
 		"Rookie\r": "\r",
 	},
 ];

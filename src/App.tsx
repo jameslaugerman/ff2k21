@@ -1,16 +1,16 @@
-// import Main from './components/MainComponents';
-import "./App.css";
 import React, { Component } from "react";
 import { Main } from "./Components/Main";
 import { BrowserRouter } from "react-router-dom";
+import styles from "./App.module.css";
+import PatchStyles from "patch-styles";
 
 class App extends Component {
 	render() {
 		return (
 			<BrowserRouter>
-				<div className="App">
+				<PatchStyles classNames={styles}>
 					<Main />
-				</div>
+				</PatchStyles>
 			</BrowserRouter>
 		);
 	}

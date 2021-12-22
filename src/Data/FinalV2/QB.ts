@@ -264,7 +264,7 @@ export const QBData: Player[] = [
 		Week1Projection: 17,
 		POR: 0,
 		JamesVal: "$0",
-		"300_Value": "$0,",
+		"300_Value": "$0",
 		"Rookie\r": "\r",
 	},
 ];

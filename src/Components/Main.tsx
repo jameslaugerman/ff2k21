@@ -19,6 +19,9 @@ interface RowsDeleted {
 export interface FF2021Column {
 	name: string;
 	label?: string;
+	options?: {
+		customBodyRender: (value: number | string | boolean) => string;
+	};
 }
 
 export const Main = (): JSX.Element => {
@@ -35,9 +38,33 @@ export const Main = (): JSX.Element => {
 		{ name: "Team" },
 		{ name: "Week1Projection", label: "Week 1 Projection" },
 		{ name: "POR", label: "P.A.R." },
-		{ name: "JamesVal", label: "My Value" },
-		{ name: "threeHundredValue", label: "ESPN 300 Value" },
-		{ name: "Rookie", label: "Rookie" },
+		{
+			name: "JamesVal",
+			label: "My Value",
+			options: {
+				customBodyRender: (value) => {
+					return `$${value}`;
+				},
+			},
+		},
+		{
+			name: "threeHundredValue",
+			label: "ESPN 300 Value",
+			options: {
+				customBodyRender: (value) => {
+					return `$${value}`;
+				},
+			},
+		},
+		{
+			name: "Rookie",
+			label: "Rookie",
+			options: {
+				customBodyRender: (value) => {
+					return value ? "Rookie" : "";
+				},
+			},
+		},
 	];
 
 	function getOptions(
